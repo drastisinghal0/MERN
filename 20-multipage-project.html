@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Multi Page Project">
+<title>20 - Multipage Project</title>
+
+<style>
+.page{
+    display:none;
+}
+
+.page:target,
+body:not(:has(.page:target)) #home{
+    display:block;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    max-width:800px;
+    margin:auto;
+    padding:20px;
+    line-height:1.6;
+}
+
+nav a{
+    margin-right:15px;
+    text-decoration:none;
+    color:blue;
+}
+
+table{
+    border-collapse:collapse;
+    width:100%;
+}
+
+table,th,td{
+    border:1px solid black;
+}
+
+th,td{
+    padding:8px;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>My Website</h1>
+
+<nav>
+<a href="#home">Home</a> |
+<a href="#about">About</a> |
+<a href="#registration">Registration</a> |
+<a href="#contact">Contact</a>
+</nav>
+<hr>
+</header>
+
+<main>
+
+<section id="home" class="page">
+<h2>Home</h2>
+
+<p>Welcome to my multi-page HTML project. This project combines headings, links, tables, images and forms.</p>
+
+<img src="https://picsum.photos/700/250" alt="Nature Image">
+
+<h3>Quick Links</h3>
+<ul>
+<li><a href="#about">About Me</a></li>
+<li><a href="#registration">Workshop Registration</a></li>
+<li><a href="#contact">Contact Page</a></li>
+</ul>
+</section>
+
+<section id="about" class="page">
+<h2>About</h2>
+
+<p>I am a BCA AI student interested in Web Development.</p>
+
+<table>
+<caption>Student Details</caption>
+
+<tr>
+<th>City</th>
+<td>Pilibhit</td>
+</tr>
+
+<tr>
+<th>Course</th>
+<td>BCA AI</td>
+</tr>
+
+<tr>
+<th>Interest</th>
+<td>Programming, AI, Web Development</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="registration" class="page">
+
+<h2>Workshop Registration</h2>
+
+<form>
+
+<p>
+<label>Name:
+<input type="text" required>
+</label>
+</p>
+
+<p>
+<label>Email:
+<input type="email" required>
+</label>
+</p>
+
+<p>
+<label>Date:
+<input type="date">
+</label>
+</p>
+
+<p>
+<label>Level:</label>
+
+<select>
+<option>Beginner</option>
+<option>Intermediate</option>
+<option>Advanced</option>
+</select>
+
+</p>
+
+<button type="submit">Register</button>
+
+</form>
+
+</section>
+
+<section id="contact" class="page">
+
+<h2>Contact</h2>
+
+<form>
+
+<p>
+<label>Your Name:
+<input type="text" required>
+</label>
+</p>
+
+<p>
+<label>Message</label><br>
+<textarea rows="5" cols="40"></textarea>
+</p>
+
+<button type="submit">Send</button>
+
+</form>
+
+<p>Email:
+<a href="mailto:example@email.com">example@email.com</a>
+</p>
+
+</section>
+
+</main>
+
+<hr>
+
+<footer>
+
+<p>&copy; 2026 My Website</p>
+
+<p><a href="#home">Back to Home</a></p>
+
+</footer>
+
+</body>
+</html>
