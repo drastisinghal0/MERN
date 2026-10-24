@@ -14,3 +14,4 @@ I successfully installed:
 The setup proof PDF is available here:
 
 [Screenshots/1000061409.pdf](Screenshots/1000061409.pdf)
+Git and GitHub setup completed successfully.
