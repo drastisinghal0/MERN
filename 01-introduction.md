@@ -11,3 +11,6 @@ What happens between typing a URL and seeing the page?
 5. Server sends the response.
 6. Browser downloads HTML, CSS, and JavaScript.
 7. The page is rendered on the screen.
+## About HTML
+
+HTML stands for HyperText Markup Language.
