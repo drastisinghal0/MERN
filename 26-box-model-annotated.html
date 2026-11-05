@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Annotated Box Model">
+<title>Assignment 26 - Box Model Annotated</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    margin:0;
+    padding:20px;
+    line-height:1.6;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+h1,h2{
+    color:#1d3557;
+}
+
+.demo{
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    margin:20px 0;
+}
+
+.my-box{
+    width:200px;
+    height:80px;
+    padding:20px;
+    border:10px solid #1d3557;
+    margin:30px;
+    background:#a8dadc;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.my-box:hover{
+    transform:scale(1.05);
+}
+
+.layer{
+    display:grid;
+    place-items:center;
+    position:relative;
+    text-align:center;
+    font-size:14px;
+}
+
+.l-margin{
+    background:#f9cb9c;
+    padding:36px;
+}
+
+.l-border{
+    background:#ffe599;
+    padding:22px;
+}
+
+.l-padding{
+    background:#b6d7a8;
+    padding:36px;
+}
+
+.l-content{
+    background:#9fc5e8;
+    padding:28px 40px;
+}
+
+.tag{
+    position:absolute;
+    top:5px;
+    left:8px;
+    font-weight:bold;
+    font-size:12px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+table,th,td{
+    border:1px solid #999;
+}
+
+th{
+    background:#1d3557;
+    color:white;
+}
+
+th,td{
+    padding:10px;
+}
+
+code{
+    background:#eee;
+    padding:2px 5px;
+    border-radius:4px;
+}
+
+footer{
+    text-align:center;
+    margin-top:30px;
+    color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>CSS Box Model - Annotated</h1>
+
+<div class="demo">
+
+<div class="my-box">
+Hello
+</div>
+
+<div class="layer l-margin">
+<span class="tag">Margin 30px</span>
+
+<div class="layer l-border">
+<span class="tag">Border 10px</span>
+
+<div class="layer l-padding">
+<span class="tag">Padding 20px</span>
+
+<div class="layer l-content">
+Content<br>200 × 80
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<h2>Box Size Calculation</h2>
+
+<table>
+<tr>
+<th>Property</th>
+<th>Calculation</th>
+</tr>
+
+<tr>
+<td>Total Width</td>
+<td>200 + (20×2) + (10×2) = <strong>260px</strong><br>Including margins = 320px</td>
+</tr>
+
+<tr>
+<td>Total Height</td>
+<td>80 + (20×2) + (10×2) = <strong>140px</strong><br>Including margins = 200px</td>
+</tr>
+</table>
+
+<h2>Using <code>box-sizing:border-box</code></h2>
+
+<p>
+When <code>box-sizing:border-box</code> is applied, the width and height include
+the padding and border. Therefore, the total width remains 200px and the content
+area becomes smaller.
+</p>
+
+<p>
+Open Developer Tools (F12) → Elements → Computed to view the Box Model of any element.
+</p>
+
+<footer>
+© 2026 Assignment 26 - CSS Box Model
+</footer>
+
+</div>
+
+</body>
+</html>
