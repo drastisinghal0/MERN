@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fix common CSS overflow problems.">
+  <title>Overflow – Fixed</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f4f4f4;
+      padding: 1.5rem;
+      line-height: 1.6;
+    }
+
+    /* FIX 1: images never exceed container */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* FIX 2 */
+    .wrapper {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* FIX 3: was width:900px (broke phones) */
+    .column {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #1d3557;
+      margin-bottom: 1rem;
+      background: #fff;
+    }
+
+    /* FIX 4: long URLs/words wrap */
+    .long-text {
+      overflow-wrap: anywhere;
+    }
+
+    /* FIX 5: wide table scrolls inside its own box */
+    .table-scroll {
+      overflow-x: auto;
+    }
+
+    .fixed-box {
+      height: 90px;
+      overflow-y: auto;
+      border: 1px solid #999;
+      padding: .5rem;
+    }
+
+    /* FIX 6: code blocks scroll */
+    pre {
+      overflow-x: auto;
+      background: #f4f4f4;
+      padding: .75rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <h1>Overflow – Fixed</h1>
+
+    <div class="column">
+      <h2>Image</h2>
+      <img src="https://picsum.photos/id/1011/1000/400"
+        alt="A rower on a calm lake">
+    </div>
+
+    <div class="column long-text">
+      <h2>Long unbroken text</h2>
+      <p>
+        https://www.example.com/this/is/a/very/long/url/that/would/normally/stretch/the/layout/sideways/forever/and/ever
+      </p>
+    </div>
+
+    <div class="column">
+      <h2>Wide table</h2>
+
+      <div class="table-scroll">
+        <table border="1" cellpadding="6" style="min-width:650px">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Course</th>
+            <th>Year</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Aarav</td>
+            <td>aarav@example.com</td>
+            <td>Meerut</td>
+            <td>B.Tech</td>
+            <td>2027</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="column">
+      <h2>Fixed-height box</h2>
+
+      <div class="fixed-box">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit.
+      </div>
+    </div>
+
+    <div class="column">
+      <h2>Code block</h2>
+
+      <pre>const message = "This line is intentionally very long so that it would overflow the container if not for overflow-x: auto";</pre>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
