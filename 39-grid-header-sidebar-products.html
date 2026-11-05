@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Store Layout</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+}
+
+.page{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+    min-height:100vh;
+}
+
+header{
+    grid-area:header;
+    background:#1f2937;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+}
+
+header input{
+    padding:8px;
+    width:220px;
+}
+
+aside{
+    grid-area:sidebar;
+    background:white;
+    padding:20px;
+}
+
+aside ul{
+    list-style:none;
+}
+
+aside li{
+    padding:8px 0;
+}
+
+main{
+    grid-area:main;
+    padding:20px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.product{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    text-align:center;
+}
+
+.product img{
+    width:100%;
+    border-radius:8px;
+}
+
+.product h3{
+    margin:10px 0;
+}
+
+.product p{
+    color:green;
+    font-weight:bold;
+}
+
+footer{
+    grid-area:footer;
+    background:#1f2937;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+@media(max-width:768px){
+.page{
+grid-template-columns:1fr;
+grid-template-areas:
+"header"
+"sidebar"
+"main"
+"footer";
+}
+}
+</style>
+
+</head>
+<body>
+
+<div class="page">
+
+<header>
+<h2>ShopGrid</h2>
+<input type="search" placeholder="Search products">
+</header>
+
+<aside>
+<h3>Categories</h3>
+<ul>
+<li>Electronics</li>
+<li>Fashion</li>
+<li>Home</li>
+<li>Sports</li>
+</ul>
+
+<h3>Price</h3>
+<ul>
+<li>Under ₹500</li>
+<li>₹500 - ₹2000</li>
+<li>Above ₹2000</li>
+</ul>
+</aside>
+
+<main>
+
+<h2>All Products</h2>
+
+<div class="products">
+
+<div class="product">
+<img src="https://picsum.photos/300?1">
+<h3>Headphones</h3>
+<p>₹1,499</p>
+</div>
+
+<div class="product">
+<img src="https://picsum.photos/300?2">
+<h3>Shoes</h3>
+<p>₹2,299</p>
+</div>
+
+<div class="product">
+<img src="https://picsum.photos/300?3">
+<h3>Backpack</h3>
+<p>₹999</p>
+</div>
+
+<div class="product">
+<img src="https://picsum.photos/300?4">
+<h3>Watch</h3>
+<p>₹3,499</p>
+</div>
+
+<div class="product">
+<img src="https://picsum.photos/300?5">
+<h3>Camera</h3>
+<p>₹18,999</p>
+</div>
+
+<div class="product">
+<img src="https://picsum.photos/300?6">
+<h3>Laptop</h3>
+<p>₹54,999</p>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+© 2026 ShopGrid
+</footer>
+
+</div>
+
+</body>
+</html>
