@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Named Grid Areas</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#eef2f7;
+}
+
+.dashboard{
+    display:grid;
+    min-height:100vh;
+    grid-template-columns:220px 1fr 1fr 1fr;
+    grid-template-rows:70px auto auto 60px;
+    grid-template-areas:
+    "header header header header"
+    "sidebar stat1 stat2 stat3"
+    "sidebar chart chart activity"
+    "footer footer footer footer";
+    gap:15px;
+    padding:15px;
+}
+
+.dashboard>*{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+}
+
+.header{
+    grid-area:header;
+    background:#1f2d3d;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.sidebar{
+    grid-area:sidebar;
+    background:#2f4050;
+    color:#fff;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    padding:10px 0;
+    border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.stat1{grid-area:stat1;}
+.stat2{grid-area:stat2;}
+.stat3{grid-area:stat3;}
+
+.stat strong{
+    display:block;
+    font-size:30px;
+    color:#2c3e50;
+}
+
+.chart{
+    grid-area:chart;
+}
+
+.bars{
+    display:flex;
+    align-items:flex-end;
+    gap:10px;
+    height:160px;
+    margin-top:20px;
+}
+
+.bars span{
+    flex:1;
+    background:linear-gradient(#5c7cfa,#3b5bdb);
+    border-radius:5px 5px 0 0;
+}
+
+.activity{
+    grid-area:activity;
+}
+
+.activity ul{
+    margin-top:10px;
+}
+
+.footer{
+    grid-area:footer;
+    background:#1f2d3d;
+    color:#fff;
+    text-align:center;
+}
+
+@media(max-width:800px){
+.dashboard{
+grid-template-columns:1fr 1fr;
+grid-template-areas:
+"header header"
+"stat1 stat2"
+"stat3 stat3"
+"chart chart"
+"activity activity"
+"sidebar sidebar"
+"footer footer";
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<header class="header">
+<h2>Analytics Dashboard</h2>
+<p>Welcome User</p>
+</header>
+
+<aside class="sidebar">
+<h3>Menu</h3>
+<ul>
+<li>Dashboard</li>
+<li>Users</li>
+<li>Sales</li>
+<li>Reports</li>
+<li>Settings</li>
+</ul>
+</aside>
+
+<section class="stat stat1">
+<p>Visitors</p>
+<strong>12,480</strong>
+</section>
+
+<section class="stat stat2">
+<p>Orders</p>
+<strong>842</strong>
+</section>
+
+<section class="stat stat3">
+<p>Revenue</p>
+<strong>₹2.4L</strong>
+</section>
+
+<section class="chart">
+<h3>Weekly Sales</h3>
+<div class="bars">
+<span style="height:50%"></span>
+<span style="height:75%"></span>
+<span style="height:90%"></span>
+<span style="height:65%"></span>
+<span style="height:100%"></span>
+<span style="height:80%"></span>
+</div>
+</section>
+
+<section class="activity">
+<h3>Recent Activity</h3>
+<ul>
+<li>New order received</li>
+<li>User registered</li>
+<li>Payment completed</li>
+<li>Report generated</li>
+</ul>
+</section>
+
+<footer class="footer">
+&copy; 2026 Dashboard Layout
+</footer>
+
+</div>
+
+</body>
+</html>
